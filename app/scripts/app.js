@@ -5,7 +5,7 @@ angular.module('ngWorkshopsApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ngMock'
+  'ngMockE2E'
 ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -16,4 +16,8 @@ angular.module('ngWorkshopsApp', [
       .otherwise({
         redirectTo: '/'
       });
-  });
+  }).run(['$httpBackend',
+    function ($httpBackend) {
+        $httpBackend.whenGET(/\.html$/).passThrough();
+    }
+]);
