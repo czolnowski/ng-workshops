@@ -1,0 +1,32 @@
+<div class="projects">
+    <h1>Projects</h1>
+<a href="/#/project/new" class="btn btn-primary">New Project</a>
+    <p><strong>Page:</strong> {{tableParams.page()}}</p>
+    <p><strong>Count per page:</strong> {{tableParams.count()}}</p>
+
+
+    <table ng-table="tableParams" class="projects table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>User</th>
+                <th class="action">Action</th>
+            </tr>
+        </thead>
+        <!--<tfoot>-->
+            <!--<tr>-->
+                <!--<th>Name</th>-->
+                <!--<th>User</th>-->
+                <!--<th class="action">Action</th>-->
+            <!--</tr>-->
+        <!--</tfoot>-->
+        <tbody>
+            <tr ng-repeat="project in $data">
+                <td data-title="'Name">{{project.name}}</td>
+                <td data-title="'Email"><a href="mailto:{{project.email}}">{{project.email}}</a></td>
+                <td data-title="'Actions'" class="action"><a ng-href="/#/project/edit/{{project.id}}">edit</a> | <a ng-href="/#/project/view/{{project.id}}">view</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/#/project/new" class="btn btn-primary">New Project</a>
+</div>
