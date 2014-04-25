@@ -16,15 +16,15 @@ angular.module('ngWorkshopsApp', [
       .when('/project/edit/:id', {
             templateUrl: 'views/projects/edit.html',
             controller: 'ProjectsEditCtrl'
-        })
-        .when('/project/new/', {
+      })
+      .when('/project/new/', {
             templateUrl: 'views/projects/new.html',
             controller: 'ProjectsNewCtrl'
-        })
-        .when('/project/:project_id/issue/:id', {
+      })
+      .when('/project/:project_id/issue/:id', {
             templateUrl: 'views/issues/detail_view.html',
             controller: 'IssueDetailViewCtrl'
-        })
+      })
       .otherwise({
         redirectTo: '/'
       });
