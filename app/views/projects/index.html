@@ -24,7 +24,7 @@
             <tr ng-repeat="project in $data">
                 <td data-title="'Name">{{project.name}}</td>
                 <td data-title="'Email"><a href="mailto:{{project.email}}">{{project.email}}</a></td>
-                <td data-title="'Actions'" class="action"><a ng-href="/#/project/edit/{{project.id}}">edit</a> | <a ng-href="/#/project/view/{{project.id}}">view</a></td>
+                <td data-title="'Actions'" class="action"><a ng-href="/#/project/edit/{{project.id}}">edit</a> | <a ng-href="/#/project/{{project.id}}">view</a></td>
             </tr>
         </tbody>
     </table>
