@@ -9,4 +9,14 @@ angular.module('ngWorkshopsApp').controller('IssueDetailViewCtrl',
      $http.get('/comments/').success(function(data, status, headers) {
         $scope.comments = data;
      });
+
+    $scope.add_comment = function(comment) {
+      $http.post('/issues/comment').success(function(data, status, headers) {
+        $scope.comments.data.push(angular.copy(data));
+      });
+    };
+
+    $scope.new_comment = {
+        project_id: $routeParams.project_id
+    };
 }]);

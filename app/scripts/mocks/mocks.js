@@ -58,7 +58,17 @@ angular.module('ngWorkshopsApp').run(['$httpBackend',
         });
         
         };
-        
+
+        $httpBackend.whenPOST('/issues/comment').respond(200, {
+            "id": 1,
+            "message": "Lorem ipsum example comment",
+            "issue_id": 1,
+            "autor": {
+                // User Item
+            },
+            "updated_at": "2013-09-12T06:20:31+0000",
+            "created_at": "2013-09-12T06:20:31+0000"
+        });
         
     }
 ]);

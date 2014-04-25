@@ -28,4 +28,11 @@
             {{ comment.created_at }}
         </div>
     </div>
+    <div class="new-comment">
+        <form>
+            <textarea type="text" ng-model="new_comment.message"></textarea><br />
+            <input type="hidden" ng-model="new_comment.project_id">
+            <button ng-click="add_comment(new_comment)">SAVE</button>
+        </form>
+    </div>
 </div>
