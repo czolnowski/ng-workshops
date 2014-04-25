@@ -1,10 +1,9 @@
 angular.module('ngWorkshopsApp')
-.controller('IssuesAddCtrl', ['$scope', function($scope){
-    $scope.project = {};
-    $scope.project = {
-        "id" : 2,
-        "name": 'angular'
-    };
+.controller('IssuesAddCtrl', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams){
 
-    $scope.addActionUrl = '#/project/' + $scope.project.id + '/issues';
+    $http.get('/project/' + $routeParams.id).success(function(data, status, headers) {
+        $scope.project = data;
+    });
+
+    $scope.addActionUrl = '#/project/' + $routeParams.id + '/issues';        
 }])
