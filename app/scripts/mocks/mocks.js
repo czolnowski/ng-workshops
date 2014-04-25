@@ -56,9 +56,28 @@ angular.module('ngWorkshopsApp').run(['$httpBackend',
             "updated_at": "2013-09-12T06:20:31+0000",
             "created_at": "2013-09-12T06:20:31+0000"
         });
-        
-        };
-        
-        
+        $httpBackend.whenGET('/project/2').respond(200, {
+            "id": 1,
+            "key": "ANGU",
+            "name": "Angular",
+            "leader": {
+                // User Item
+            },
+            "url": "https://angularjs.org/",
+            "updated_at": "2011-10-12T06:20:31+0000",
+            "created_at": "2012-12-12T06:20:31+0000"
+        });
+        $httpBackend.whenPOST('/projects').respond(200, {
+            "id": parseInt(Math.random()*1000,10),
+            "key": "PROJ",
+            "name": "Project",
+            "leader": {
+//            User Item
+        },
+            "url": "project.com",
+            "updated_at": "2013-09-12T06:20:31+0000",
+            "created_at": "2013-09-12T06:20:31+0000"
+
+         });
     }
 ]);

@@ -1,8 +1,8 @@
 angular.module('ngWorkshopsApp')
-.controller('ProjectsCtrl', ['$scope', 'ngTableParams', function($scope, ngTableParams) {
+.controller('ProjectsCtrl', ['$scope', '$rootScope', '$modal', 'ngTableParams', function($scope, $rootScope, $modal, ngTableParams) {
         console.log('ProjectCtrl loaded');
 
-        var data = [
+        $scope.projects = [
             {id: 1, name: "Project 1", email:"exampkle1@example.org", edit: "#", view: "#"},
             {id: 2, name: "Project 2", email:"exampkle2@example.org", edit: "#", view: "#"},
             {id: 3, name: "Project 3", email:"exampkle3@example.org", edit: "#", view: "#"},
@@ -48,11 +48,35 @@ angular.module('ngWorkshopsApp')
             page: 1,
             count: 10
         }, {
-            total: data.length,
+            total: $scope.projects.length,
             getData: function($defer, params){
-                $defer.resolve(data.slice((params.page() - 1) * params.count(), params.page() * params.count()));
+                params.total($scope.projects.length);
+                $defer.resolve($scope.projects.slice((params.page() - 1) * params.count(), params.page() * params.count()));
+
+                console.log($scope.projects);
             }
         });
 
 //        $scope.projects = data;
+
+        $rootScope.$on('newProject', function(){
+            console.log(arguments);
+        });
+        $scope.openModal = function(){
+            var modal = $modal.open({
+                templateUrl: 'views/projects/new.html',
+                controller: 'ProjectsNewCtrl'
+            });
+
+            modal.result.then(function(project){
+
+                console.log(project);
+
+                $scope.projects.push(project);
+
+                $scope.tableParams.reload();
+
+
+            });
+        };
 }]);
