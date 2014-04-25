@@ -18,7 +18,7 @@
 </div>
 
 <div class="row" ng-repeat="issue in issues">
-    <div class="value"><a href="/issues/{{ issue.id }}">{{ issue.title }}</a></div>
+    <div class="value"><a href="#/project/{{ project.id }}/issue/{{ issue.id }}">{{ issue.title }}</a></div>
     <div class="value">{{ issue.description }}</div>
     <div class="value">{{ issue.status }}</div>
     <div class="value">{{ issue.type }}</div>
