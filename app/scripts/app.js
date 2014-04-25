@@ -6,7 +6,8 @@ angular.module('ngWorkshopsApp', [
   'ngSanitize',
   'ngRoute',
   'ngMockE2E',
-  'ngTable'
+  'ngTable',
+  'ui.bootstrap'
 ])
   .config(function ($routeProvider) {
     $routeProvider
