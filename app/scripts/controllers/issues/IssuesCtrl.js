@@ -1,10 +1,10 @@
 angular.module('ngWorkshopsApp')
-.controller('IssuesCtrl', ['$scope', function($scope){
-    $scope.project = {};
-    $scope.project = {
-        "id" : 2,
-        "name": 'angular'
-    };
+.controller('IssuesCtrl', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams){
+
+     $http.get('/project/' + $routeParams.id).success(function(data, status, headers) {
+        $scope.project = data;
+     });
+
     $scope.issues = {};
     $scope.issues = [
         {
