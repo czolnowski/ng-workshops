@@ -1,0 +1,33 @@
+<h2>Issues in "{{ project.name }}" project</h2>
+
+<div class="row mb">
+    <a class="add_button" href="#/project/{{ project.id }}/issues">Add new issue</a>
+</div>
+
+
+<div class="row">
+    <div class="h">title</div>
+    <div class="h">description</div>
+    <div class="h">status</div>
+    <div class="h">type</div>
+    <div class="h">priority</div>
+    <div class="h">assignee</div>
+    <div class="h">updated_at</div>
+    <div class="h">created_at</div>
+</div>
+
+<div class="row" ng-repeat="issue in issues">
+    <div class="value"><a href="/issues/{{ issue.id }}">{{ issue.title }}</a></div>
+    <div class="value">{{ issue.description }}</div>
+    <div class="value">{{ issue.status }}</div>
+    <div class="value">{{ issue.type }}</div>
+    <div class="value">{{ issue.priority }}</div>
+    <div class="value">{{ issue.assignee }}</div>
+    <div class="value">{{ issue.updated_at }}</div>
+    <div class="value">{{ issue.created_at }}</div>
+</div>
+
+
+<div class="row mt">
+    <a class="add_button" href="#/project/{{ project.id }}/issues">Add new issue</a>
+</div>
