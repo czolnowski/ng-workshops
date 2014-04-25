@@ -26,6 +26,14 @@ angular.module('ngWorkshopsApp', [
             templateUrl: 'views/issues/detail_view.html',
             controller: 'IssueDetailViewCtrl'
       })
+      .when('/project/:id', {
+        templateUrl: 'views/issues/index.html',
+        controller: 'IssuesCtrl'
+      })
+      .when('/project/:id/issues', {
+        templateUrl: 'views/issues/add.html',
+        controller: 'IssuesAddCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

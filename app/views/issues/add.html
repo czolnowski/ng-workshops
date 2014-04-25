@@ -1,0 +1,31 @@
+<h2>Add new Issue to "{{ project.name }}" project</h2>
+
+<div class="row mb">
+    <a class="add_button" href="#/project/{{ project.id }}">Back to issues list</a>
+</div>
+
+<form action="{{ addActionUrl }}" method="post">
+    <div class="row">
+        <div>title</div><input type="text" name="title" />
+    </div>
+    <div class="row">
+        <div>description</div><input type="text" name="title" />
+    </div>
+    <div class="row">
+        <div>status</div><input type="text" name="status" />
+    </div>
+    <div class="row">
+        <div>type</div><input type="text" name="type" />
+    </div>
+    <div class="row">
+        <div>priority</div><input type="text" name="priority" />
+    </div>
+    <div class="row">
+        <div>assignee</div><input type="text" name="assignee" />
+    </div>
+    <input type="submit" value="Add" />
+</form>
+
+<div class="row mt">
+    <a class="add_button" href="#/project/{{ project.id }}">Back to issues list</a>
+</div>

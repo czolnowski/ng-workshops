@@ -101,3 +101,27 @@ body {
 .comment {
   border-bottom: 1px solid #efefef;
 }
+
+div.row {
+    clear: both;
+    min-width:1200px;
+}
+div.row > div.h, div.row > div.value {
+    float: left;
+    color: black;
+    min-width:150px;
+}
+a.add_button {
+    text-decoration: none;
+    background: #000000;
+    display:block; 
+    width: 120px;
+    padding: 10px;
+}
+
+.mt {
+    margin-top: 30px;
+}
+.mb {
+    margin-bottom: 30px;
+}
