@@ -1,6 +1,6 @@
 <div class="projects">
     <h1>Projects</h1>
-<a href="/#/project/new" class="btn btn-primary">New Project</a>
+<button ng-click="openModal()" class="btn btn-primary">New Project</button>
     <p><strong>Page:</strong> {{tableParams.page()}}</p>
     <p><strong>Count per page:</strong> {{tableParams.count()}}</p>
 
@@ -28,5 +28,5 @@
             </tr>
         </tbody>
     </table>
-    <a href="/#/project/new" class="btn btn-primary">New Project</a>
+    <button ng-click="openModal()" class="btn btn-primary">New Project</button>
 </div>
