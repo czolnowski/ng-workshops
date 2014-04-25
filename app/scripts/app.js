@@ -4,8 +4,7 @@ angular.module('ngWorkshopsApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute',
-  'ngMock'
+  'ngRoute'
 ])
   .config(function ($routeProvider) {
     $routeProvider
