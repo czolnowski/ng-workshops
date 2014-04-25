@@ -1,0 +1,29 @@
+///my styles
+
+.projects{
+  table.projects{
+    width: 100%;
+
+    thead, tfoot{
+      tr{
+        th{
+          &.action{
+            text-align: center;
+          }
+        }
+      }
+    }
+    tbody{
+      tr{
+        td{
+          &.action{
+            text-align: center;
+          }
+          a{
+
+          }
+        }
+      }
+    }
+  }
+}
